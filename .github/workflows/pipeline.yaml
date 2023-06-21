@@ -38,4 +38,7 @@ jobs:
     needs: Test
     env:
       CORREO: ${{ secrets.EMAIL }}
-  
+    steps:
+      - name: Mensaje
+        run: |
+          echo "Esta tarea del pipeline no funciona"
