@@ -196,8 +196,8 @@ class EstadisticasAlumnoTest {
 	@Test
 	void testObtenerDiferenciaMediaAsignaturaNegativa() {
 
-	//Configurar comportamiento del MOCK
-		
+		//Configurar comportamiento del MOCK
+		system.out.println("No hice el cambio");
 	
 		// Crear instancia de EstadisticasAlumno con el mock de AlumnoDAO
 		
