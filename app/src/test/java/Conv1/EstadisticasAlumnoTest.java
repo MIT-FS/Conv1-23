@@ -8,6 +8,7 @@ import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.atMostOnce;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.times;
 
 import java.util.ArrayList;
 
@@ -107,14 +108,14 @@ class EstadisticasAlumnoTest {
 	@Test
 	void testEstadisticasAlumno() {
 		//Configurar comportamiento del MOCK
-		
 	
 		// Crear instancia de EstadisticasAlumno con el mock de AlumnoDAO
-		
+
 		//Invocar métdo a probar
 		
 
 		//Escribir verificaciones
+
 	}
 
 	/**
@@ -124,14 +125,17 @@ class EstadisticasAlumnoTest {
 	@Test
 	void testObtenerMediaNotas() {
 		//Configurar comportamiento del MOCK
-		
+		Mockito.when(alumnoDAO.getAlumnoByUvus("uvus01")).thenReturn(alumno1);
 	
 		// Crear instancia de EstadisticasAlumno con el mock de AlumnoDAO
-		
+		EstadisticasAlumno estadistica = new EstadisticasAlumno(alumnoDAO);
 		//Invocar métdo a probar
+		double mediaObtenida = estadistica.obtenerMediaNotas("uvus01");
 		
 
 		//Escribir verificaciones
+		Mockito.verify(alumnoDAO, times(1)).getAlumnoByUvus("uvus01");
+		assertEquals(mediaObtenida, 7.25, "La media obtenida no es correcta.");
 	}
 
 	/**
