@@ -4,6 +4,7 @@
 package us.dit.fs.clase.control;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.atMostOnce;
 import static org.mockito.Mockito.verify;
@@ -29,6 +30,7 @@ import us.dit.fs.clase.model.AlumnoDAO;
 import us.dit.fs.clase.model.Asignatura;
 import us.dit.fs.clase.model.Alumno;
 
+import java.io.*;
 /**
  * @author Isabel Román
  *
@@ -197,7 +199,7 @@ class EstadisticasAlumnoTest {
 	void testObtenerDiferenciaMediaAsignaturaNegativa() {
 
 		//Configurar comportamiento del MOCK
-		system.out.println("No hice el cambio");
+		System.out.println("No hice el cambio");
 	
 		// Crear instancia de EstadisticasAlumno con el mock de AlumnoDAO
 		
