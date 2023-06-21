@@ -1,7 +1,7 @@
 name: Flujo para construir y probar el código. Se envía email si su ejecución es exitosa.
 on:
   push:  
-    branches: [manmanher]
+    branches: [main]
 jobs:
   Build:
     runs-on: ubuntu-latest
