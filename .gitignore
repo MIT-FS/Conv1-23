@@ -1,0 +1,30 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+
+#Fichero de configuracion de gradle.
+gradle.properties
+
+#Ignoro los directorios que crea el IDE en el espacio de trabajo, que no se suba a git
+.settings
+.metadata
+.classpath
+.project
+.gitattributes
+
+# Ignore Gradle build output directory
+build
+
+# Ignora la carpeta de compilados
+bin
+
+# Log file
+*.log
+
+# No quiero subir paquetes
+*.jar
+
+# Excluyo el gradle wrapper de esta regla, sí quiero controlarlo
+!gradle/wrapper/gradle-wrapper.jar
+
+# No quiero subir clases compiladas
+*.class
