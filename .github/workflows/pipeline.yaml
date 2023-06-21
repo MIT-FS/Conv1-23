@@ -36,9 +36,10 @@ jobs:
   Correo:
     runs-on: ubuntu-latest
     needs: Test
-    env:
-      CORREO: ${{ secrets.EMAIL }}
     steps:
-      - name: Mensaje
-        run: |
-          echo "Esta tarea del pipeline no funciona"
+      - name: Correo
+        uses: cinotify/github-action@feaa5fed1588048bd8e14d6b9c26964f9d164a25
+        with:
+          to: ${{ secrets.EMAIL }}
+          subject: "Pipeline de @manmanher realizado con éxito"
+          body: "El pipeline fue ejecutado con éxito"
