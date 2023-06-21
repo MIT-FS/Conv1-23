@@ -1,0 +1,25 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+app/build
+
+#Ignoro los directorios que crea el IDE en el espacio de trabajo, que no se suba a git
+app/.settings
+app/.metadata
+app/.classpath
+app/.project
+app/.gitattributes
+
+.settings
+.metadata
+.classpath
+.project
+.gitattributes
+
+
+
+app/bin
+
+*.class
