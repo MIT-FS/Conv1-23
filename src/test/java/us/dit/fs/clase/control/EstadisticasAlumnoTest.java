@@ -232,14 +232,21 @@ class EstadisticasAlumnoTest {
 	@Test
 	void testObtenerCuartilPorClase() {
 		//Configurar comportamiento del MOCK
-		
+		alumnoDAO = Mockito.mock(AlumnoDAO.class);
+		Mockito.when(alumnoDAO.getAlumnoByUvus(alumno1.getUvus())).thenReturn(alumno1);
+		Mockito.when(alumnoDAO.getAlumnosByClase(alumno1.getClase())).thenReturn(alumnos);
 	
 		// Crear instancia de EstadisticasAlumno con el mock de AlumnoDAO
+		EstadisticasAlumno underTest = new EstadisticasAlumno(alumnoDAO);
 		
 		//Invocar métdo a probar
+		int cuartil = underTest.obtenerCuartilPorClase(alumno1.getUvus());
 		
-
 		//Escribir verificaciones
+		Mockito.verify(alumnoDAO).getAlumnoByUvus(Mockito.anyString());
+		Mockito.verify(alumnoDAO).getAlumnosByClase(Mockito.anyString());
+		
+		assertEquals(cuartil, 3, "El alumno 1 obtiene una media de 7.25 (2º nota más alta) y debe estar en el cuartil tres");
 		
 	}
 
